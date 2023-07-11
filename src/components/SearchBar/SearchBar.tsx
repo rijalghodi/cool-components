@@ -23,7 +23,7 @@ export interface SearchBarProps
   icon?: JSX.Element;
 }
 
-export default function SearchBar(props: SearchBarProps) {
+export function SearchBar(props: SearchBarProps) {
   const theme = useMantineTheme();
   const { classes } = useStyles(
     // First argument of useStyles is styles params

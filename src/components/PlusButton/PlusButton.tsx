@@ -18,7 +18,7 @@ export const PlusButton = (props: ButtonProps) => {
   );
   return (
     <Button leftIcon={<IconPlus size={props.size} />} className={classes.root}>
-      {props.children}
+      {props.children ?? "Add"}
     </Button>
   );
 };
