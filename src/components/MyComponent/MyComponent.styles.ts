@@ -1,5 +1,5 @@
 // MyComponent.styles.ts
-import { createStyles, MantineNumberSize } from "@mantine/core";
+import { createStyles, MantineNumberSize } from '@mantine/core';
 
 // Styles params are optional
 export interface MyComponentStylesParams {

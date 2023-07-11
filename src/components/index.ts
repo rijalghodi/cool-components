@@ -1,3 +1,3 @@
-export * from "./PlusButton";
-export * from "./MyComponent";
-export * from "./SearchBar";
+export * from './MyComponent';
+export * from './PlusButton';
+export * from './SearchBar';

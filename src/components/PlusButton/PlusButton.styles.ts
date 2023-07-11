@@ -1,4 +1,4 @@
-import { createStyles, MantineNumberSize, MantineSize, TextInputProps } from "@mantine/core";
+import { createStyles, MantineNumberSize, MantineSize } from '@mantine/core';
 
 // Styles params are optional
 export interface PlusButtonStylesParams {
@@ -6,9 +6,11 @@ export interface PlusButtonStylesParams {
   size?: MantineSize;
 }
 
-export default createStyles((theme, { radius, size }: PlusButtonStylesParams) => ({
-  root: {
-    size: size,
-    radius: theme.fn.radius(radius),
-  },
-}));
+export default createStyles(
+  (theme, { radius, size }: PlusButtonStylesParams) => ({
+    root: {
+      size: size,
+      radius: theme.fn.radius(radius),
+    },
+  }),
+);

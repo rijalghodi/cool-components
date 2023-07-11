@@ -1,4 +1,3 @@
-export { SearchBar } from "./SearchBar";
-
-export type { SearchBarProps, SearchBarStylesNames } from "./SearchBar";
-export type { SearchBarStylesParams } from "./SearchBar.styles";
+export type { SearchBarProps, SearchBarStylesNames } from './SearchBar';
+export { SearchBar } from './SearchBar';
+export type { SearchBarStylesParams } from './SearchBar.styles';
