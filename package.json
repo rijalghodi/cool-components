@@ -5,6 +5,7 @@
   },
   "version": "0.3.0",
   "description": "A cool components for react app",
+  "repository": "rijalghodi/cool-components",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/types/index.d.ts",
