@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "A cool components for react app",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
