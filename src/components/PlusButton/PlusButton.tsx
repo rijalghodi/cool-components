@@ -1,29 +1,14 @@
-import { Button, ButtonProps, DefaultProps, Selectors } from '@mantine/core';
+import { Button, ButtonProps } from '@mantine/core';
 import { IconPlus } from '@tabler/icons-react';
 import React from 'react';
 
-import useStyles, { PlusButtonStylesParams } from './PlusButton.styles';
+import { getNumberSize } from '../../utils';
 
-export type PlusButtonStylesNames = Selectors<typeof useStyles>;
+export type PlusButtonProps = ButtonProps;
 
-export interface PlusButtonProps
-  extends DefaultProps<PlusButtonStylesNames, PlusButtonStylesParams>,
-    Omit<Omit<ButtonProps, 'classNames'>, 'styles'> {}
-
-export const PlusButton = (props: ButtonProps) => {
-  const { classes } = useStyles(
-    // First argument of useStyles is styles params
-    { radius: props.radius, size: props.size },
-    // Second argument is responsible for styles api integration
-    {
-      name: 'SearchBar',
-      classNames: props.classNames,
-      styles: props.styles,
-      unstyled: props.unstyled,
-    },
-  );
+export const PlusButton = (props: PlusButtonProps) => {
   return (
-    <Button leftIcon={<IconPlus size={props.size} />} className={classes.root}>
+    <Button leftIcon={<IconPlus size={getNumberSize(props.size)} />} {...props}>
       {props.children ?? 'Add'}
     </Button>
   );

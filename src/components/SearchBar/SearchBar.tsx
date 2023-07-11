@@ -5,12 +5,13 @@ import {
   Selectors,
   TextInput,
   TextInputProps,
-  useMantineTheme,
+  useComponentDefaultProps,
 } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 import React from 'react';
 
 import useStyles, { SearchBarStylesParams } from './SearchBar.styles';
+import { getNumberSize } from '../../utils';
 
 export type SearchBarStylesNames = Selectors<typeof useStyles>;
 
@@ -23,44 +24,61 @@ export interface SearchBarProps
 }
 
 export function SearchBar(props: SearchBarProps) {
-  const theme = useMantineTheme();
+  const defaultProps: Partial<SearchBarProps> = {
+    radius: 6,
+  };
+
+  const {
+    radius,
+    classNames,
+    styles,
+    unstyled,
+    onChange,
+    onSearch,
+    icon,
+    searchButtonLabel,
+    ...other
+  } = useComponentDefaultProps('SearchBar', defaultProps, props);
+
   const { classes } = useStyles(
     // First argument of useStyles is styles params
-    { radius: props.radius },
+    { radius: radius },
     // Second argument is responsible for styles api integration
     {
       name: 'SearchBar',
-      classNames: props.classNames,
-      styles: props.styles,
-      unstyled: props.unstyled,
+      classNames: classNames,
+      styles: styles,
+      unstyled: unstyled,
     },
   );
   return (
     <TextInput
-      className={classes.input}
-      placeholder={props.placeholder}
-      value={props.value}
-      onChange={props.onChange}
+      {...other}
+      classNames={{
+        input: classes.input,
+      }}
+      onChange={onChange}
       onKeyDown={(event) => {
-        if (event.key === 'Enter' && props.onSearch) {
-          props.onSearch();
+        if (event.key === 'Enter' && onSearch) {
+          onSearch();
         }
       }}
       icon={
-        <Center pl={props.size}>
-          {props.icon ?? <IconSearch size={theme.fn.radius(props.size)} />}
+        <Center pl={getNumberSize(other.size) / 3}>
+          {icon ?? <IconSearch size={getNumberSize(other.size)} />}
         </Center>
       }
       rightSection={
         <Button
           className={classes.button}
-          onClick={props.onSearch}
+          size={other.size}
+          onClick={onSearch}
           sx={{
             position: 'absolute',
             right: 0,
           }}
         >
-          {props.searchButtonLabel ?? 'Search'}
+          {searchButtonLabel ?? 'Search'}
         </Button>
       }
     />

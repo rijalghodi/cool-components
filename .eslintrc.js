@@ -9,6 +9,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'plugin:storybook/recommended',
   ],
   ignorePatterns: ['!.config.js', 'cz-config.js', '!.prettierrc.js'],
   rules: {
@@ -76,6 +77,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     //#endregion  //*======== Import Sort ===========
   },
+
   globals: {
     React: true,
     JSX: true,
