@@ -25,7 +25,7 @@ export interface SearchBarProps
 
 export function SearchBar(props: SearchBarProps) {
   const defaultProps: Partial<SearchBarProps> = {
-    radius: 6,
+    radius: 'xl',
   };
 
   const {
