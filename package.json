@@ -26,6 +26,7 @@
     "find:unused": "next-unused",
     "format:check": "prettier -c .",
     "build": "rm -rf dist && NODE_NO_WARNINGS=1 node build.mjs && tsc --emitDeclarationOnly --declarationDir ./dist/types",
+    "local-build": "rmdir /s /q dist && node build.mjs && tsc --emitDeclarationOnly --declarationDir ./dist/types",
     "prepare": "husky install",
     "dev": "storybook dev -p 6006",
     "build-storybook": "storybook build"
