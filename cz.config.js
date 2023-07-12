@@ -37,9 +37,8 @@ module.exports = {
 
   scopes: [
     { name: 'app' },
-    { name: 'routes' },
-    { name: 'pages' },
-    { name: 'home' },
+    { name: 'stories' },
+    { name: 'docs' },
     { name: 'components' },
     { name: 'test' },
     { name: 'lib' },
