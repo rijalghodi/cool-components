@@ -16,6 +16,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "git:commit": "cz",
+    "git:push": "git push -u origin HEAD",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix && yarn format",
     "lint:strict": "eslint --max-warnings=0 src",
@@ -25,7 +27,7 @@
     "format:check": "prettier -c .",
     "build": "rm -rf dist && NODE_NO_WARNINGS=1 node build.mjs && tsc --emitDeclarationOnly --declarationDir ./dist/types",
     "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "keywords": [
@@ -41,6 +43,7 @@
   "author": "Rijal Ghodi",
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/config-conventional": "^17.6.6",
     "@emotion/react": "^11.11.1",
     "@mantine/core": "^6.0.16",
     "@mantine/hooks": "^6.0.16",
@@ -54,6 +57,10 @@
     "@tabler/icons-react": "^2.24.0",
     "@types/react": "^18.2.14",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "commitizen": "^4.3.0",
+    "commitlint": "^17.6.6",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "cz-customizable": "^7.0.0",
     "esbuild": "^0.18.11",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
@@ -82,5 +89,13 @@
     "**/*.{json,css,scss,md}": [
       "prettier -w"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./cz.config.js"
+    }
   }
 }
