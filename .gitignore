@@ -47,5 +47,4 @@ yarn-error.log*
 # unlighthouse
 
 .unlighthouse
-.prettierrc.js
 next-env.d.ts
